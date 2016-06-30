@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <target name="clean">
+        <delete dir="build/jar"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/sampleTAI.jar" basedir="build/classes">
+            <manifest>
+                <attribute name="Main-Class" value="sample.SampleTAI"/>
+            </manifest>
+        </jar>
+    </target>
+
+</project>

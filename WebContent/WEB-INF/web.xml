@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+    <display-name>Error Page Test</display-name>
+
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>400</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>401</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>403</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>404</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>405</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>406</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>407</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>408</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>409</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>410</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>411</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>412</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>413</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>414</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>415</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>416</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>417</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>500</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>501</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>502</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>503</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>504</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+    <error-page>
+        <error-code>505</error-code>
+        <location>/error.jsp</location>
+    </error-page>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>action</web-resource-name>
+            <description>Every thing in this application is secured </description>
+            <url-pattern>/</url-pattern>
+            <url-pattern>/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>Authenticated</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <description>User data constraints</description>
+            <transport-guarantee>NONE</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Static Resources</web-resource-name>
+            <description>Non-protected resources</description>
+            <url-pattern>/error.jsp</url-pattern>
+            <url-pattern>/ServletError</url-pattern>
+        </web-resource-collection>
+    </security-constraint>
+
+    <security-role>
+        <description>AuthenticatedUsers</description>
+        <role-name>Authenticated</role-name>
+    </security-role>
+
+    <security-role>
+        <description>Everyone</description>
+        <role-name>Everyone</role-name>
+    </security-role>
+
+    <login-config>
+       <auth-method>
+	   BASIC
+	   </auth-method>
+    </login-config>
+</web-app>
